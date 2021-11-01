@@ -1,0 +1,85 @@
+﻿<Window x:Class="OS_kurs.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OS_kurs"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="30*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <Menu Height="25" Grid.Column="1" Grid.ColumnSpan="2">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Сохранить txt" Command="{Binding SaveFileCommand}"></MenuItem>
+                <MenuItem Header="Открыть txt" Command="{Binding OpenFileCommand}"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Справка" >
+                <MenuItem Header="Информация о приложении" Command="{Binding OpenHelpCommand}" ></MenuItem>
+                <MenuItem Header="Как пользоваться" Command="{Binding OpenInstructionCommand}"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <TextBlock Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Text="Ошибки:" VerticalAlignment="Bottom"/>
+        <ScrollViewer Grid.Column="1" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="8">
+            <TextBlock  TextWrapping="Wrap" Text="{Binding StrErrors}"  Background="#FFC7C7C7"
+                   ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+        </ScrollViewer>
+        <TextBlock ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" 
+            Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" Text="Результат:" VerticalAlignment="Bottom"/>
+        <ScrollViewer Grid.Column="1" Grid.Row="6" Grid.RowSpan="7" Grid.ColumnSpan="8">
+            <TextBlock  TextWrapping="Wrap" Text="{Binding StrCorrectData}"  Background="#FFC7C7C7" />
+        </ScrollViewer>
+        <Button Content="Найти ошибки" Grid.Row="5" VerticalAlignment="Center"  Grid.Column="8" Command="{Binding FindErrorsCommand}"/>
+        <Button Content="Исправить" Grid.Row="13" VerticalAlignment="Center"  Grid.Column="8" Command="{Binding StartCorrectionCommand}"/>
+        <!--<DataGrid Name="ud" ItemsSource ="{Binding Path=UserDirectory}" 
+                 SelectedItem="{Binding SelecetedFile}"
+                 AutoGenerateColumns="False" RowBackground="LightGray"
+                 Background="#FFDDDDDD" Grid.Row="2" Grid.Column="1" Grid.RowSpan="6" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding Path=name}" Width="85" />
+                <DataGridTextColumn Header="Кластер" Binding="{Binding Path=index, StringFormat={}{0:D}}" Width="85" />
+            </DataGrid.Columns>
+        </DataGrid>-->
+        <!--<TextBlock Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Text="Директорий пользователя:" VerticalAlignment="Bottom" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Column="3" Grid.Row="1" TextWrapping="Wrap" Text="FAT:" VerticalAlignment="Bottom" Grid.ColumnSpan="1"/>
+        <TextBlock Grid.Column="4" Grid.Row="1" TextWrapping="Wrap" Text="Изменение FAT:" VerticalAlignment="Bottom" Grid.ColumnSpan="1"/>
+        <DataGrid ItemsSource ="{Binding Path=FatArray}" Grid.Column="3"  Grid.Row="2" Grid.RowSpan="6"
+                  SelectedItem="{Binding SelecetedClaster}" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№" Binding="{Binding Path=Key}" />
+                <DataGridTextColumn Header="val" Binding="{Binding Path=Value, StringFormat={}{0:D}}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox Grid.Column="4" Height="23" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <Button Content="Изменить" Grid.Column="5" Grid.Row="2" VerticalAlignment="Top" Height="23"/>
+        <Button Content="Добавить" Grid.Column="6" Grid.Row="2" VerticalAlignment="Top" Height="23"/>-->
+    </Grid>
+
+</Window>
