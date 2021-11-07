@@ -125,7 +125,7 @@ namespace OS_kurs
 
             _addFile = obj => { AddFile(); };
             _deleteFile = obj => { DeleteFile(); };
-            _changeFile = obj => { ChangeFile(); };
+            _changeFile = obj => { ChangeNameFile(); };
         }
 
         #region Methods
@@ -150,11 +150,11 @@ namespace OS_kurs
                 DefaultDialogService.ShowMessage("Такое имя файла уже существует");
             }
         }
-        private void ChangeFile()
+        private void ChangeNameFile()
         {
             try
             {
-                UserDirectory.ChangeFile(SelectedFile,NameFile, ClasterFile);
+                UserDirectory.ChangeNameFile(SelectedFile,NameFile);
             }
             catch (ArgumentException)
             {
@@ -201,8 +201,6 @@ namespace OS_kurs
                 DefaultDialogService.ShowMessage("Неверно введны данные");
             }
         }
-
-
 
         private void SaveFile()
         {

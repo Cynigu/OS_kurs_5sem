@@ -112,13 +112,13 @@ namespace OS_kurs
             FatArray[nullIndex[t]].Claster = "eof";
             UserDirectory.Add(new File(name, nullIndex[0]));
         }
-        public void ChangeFile(File file, string newName, string newClaster)
+        public void ChangeNameFile(File file, string newName)
         {
-            int t;
-            if (!int.TryParse(newClaster, out t))
-                throw new ArgumentException();
-            if (t == 0)
-                throw new ArgumentException();
+            //int t;
+            //if (!int.TryParse(newClaster, out t))
+            //    throw new ArgumentException();
+            //if (t == 0)
+            //    throw new ArgumentException();
 
             for (int i = 0; i < UserDirectory.Count; i++)
             {
@@ -128,8 +128,8 @@ namespace OS_kurs
             //var f = from file1 in UserDirectory where file1.name == file.name select file1;
             //f.ToArray()[0] = new File(newName, t);
             int j = UserDirectory.IndexOf(file);
-            UserDirectory[j] = new File(newName, t);
-
+            //file.name = newName;
+            UserDirectory[j] = new File(newName, file.index);
             //file.name = newName;
             //file.index = t;
         }
