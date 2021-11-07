@@ -95,7 +95,7 @@
         <TextBox Grid.Column="4" Height="23" Grid.Row="4" TextWrapping="Wrap" ToolTip="Название файла"
                  Text="{Binding NameFile}" VerticalAlignment="Top" >
         </TextBox>
-        <TextBox Grid.Column="5" Height="23" Grid.Row="4" TextWrapping="Wrap" ToolTip="Первый кластер файла"
+        <TextBox Grid.Column="5" Height="23" Grid.Row="4" TextWrapping="Wrap" ToolTip="Размер файла"
             Text="{Binding ClasterFile}" VerticalAlignment="Top"  />
         <Button Content="Изменить" Grid.Column="6" Grid.Row="4"
             Command="{Binding ChangeFileCommand}" VerticalAlignment="Top" Height="23"/>

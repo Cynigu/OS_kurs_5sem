@@ -79,17 +79,38 @@ namespace OS_kurs
         {
             UserDirectory.Remove(file);
         }
-        public void AddFile(string name, string claster)
+        public void AddFile(string name, string size)
         {
             int t;
-            if (!int.TryParse(claster,out t))
+            if (!int.TryParse(size,out t))
                 throw new ArgumentException();
             for (int i =0; i< UserDirectory.Count; i++)
             {
                 if (UserDirectory[i].name == name)
                     throw new InvalidCastException();
             }
-            UserDirectory.Add(new File(name, t));
+            List<int> nullIndex = new List<int>();
+            for (int i=0; i< FatArray.Count; i++)
+            {
+                if (FatArray[i].Claster == "")
+                {
+                    nullIndex.Add(FatArray[i].Index);
+                    if (nullIndex.Count == t+1)
+                    {
+                        break;
+                    }
+                }
+            }
+            if (nullIndex.Count != t+1)
+            {
+                throw new ArgumentException();
+            }
+            for (int i=0; i<nullIndex.Count-1; i++)
+            {
+                FatArray[nullIndex[i]].Claster = nullIndex[i + 1].ToString();
+            }
+            FatArray[nullIndex[t]].Claster = "eof";
+            UserDirectory.Add(new File(name, nullIndex[0]));
         }
         public void ChangeFile(File file, string newName, string newClaster)
         {
