@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using DialogServiceForWPF2;
 using System.Windows.Input;
 using OS_kurs.view;
+using System.Windows.Forms;
 
 namespace OS_kurs
 {
@@ -368,17 +369,20 @@ namespace OS_kurs
 
         private void OpenInstruction()
         {
-            string help = "Инструкция:\n";
-            var info = _conteiner.Resolve<InformationWindow>(new NamedParameter("p1", help));
-            info.Show();
+            Help.ShowHelp(null, @"spravka.chm");
+            //string help = "Инструкция:\n";
+            //var info = _conteiner.Resolve<InformationWindow>(new NamedParameter("p1", help));
+            //info.Show();
         }
 
         private void OpenHelp()
         {
-            string help = "Справка:\n" +
-                "Курсовая работа по дисциплине \"Операционные системы\"\n" +
-                "Работу выполнила студентка 494 группой 3 курса: Тюлькина Ирина Павловна\n" +
-                "По теме: \"\"";
+            string help = "Создание приложения, реализующего одну из базовых стратегий операционной системы.\n" +
+                "Реализация модели организации файловых систем\n" +
+                "Организация: СПбГТИ(ТУ)\n"+
+                "Группа: 494\n"+
+                "Автор: Тюлькина Ирина Павловна\n"+
+                "Санкт-Петербург, 2021";
             var info = _conteiner.Resolve<InformationWindow>(new NamedParameter("p1", help));
             info.Show();
         }

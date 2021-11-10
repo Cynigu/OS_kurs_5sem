@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OS_kurs.view"
         mc:Ignorable="d"
-        Title="InformationWindow" Height="400" Width="400">
+        Title="InformationWindow" Height="313.869" Width="400">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30*"/>

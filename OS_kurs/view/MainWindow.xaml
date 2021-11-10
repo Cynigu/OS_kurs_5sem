@@ -49,8 +49,8 @@
                 <MenuItem Header="Открыть txt" Command="{Binding OpenFileCommand}"></MenuItem>
             </MenuItem>
             <MenuItem Header="Справка" >
-                <MenuItem Header="Информация о приложении" Command="{Binding OpenHelpCommand}" ></MenuItem>
-                <MenuItem Header="Как пользоваться" Command="{Binding OpenInstructionCommand}"></MenuItem>
+                <MenuItem Header="О программе" Command="{Binding OpenHelpCommand}" ></MenuItem>
+                <MenuItem Header="Справочник" Command="{Binding OpenInstructionCommand}"></MenuItem>
             </MenuItem>
         </Menu>
         <TextBlock Grid.Column="1" Grid.Row="8" TextWrapping="Wrap" Text="Ошибки:" VerticalAlignment="Bottom"/>
